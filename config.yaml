@@ -1,4 +1,36 @@
-baseURL: "http://example.org/"
+baseURL: "/"
 languageCode: "en-us"
-title: "My New Hugo Site"
+title: "Kura Bloodlust"
+paginate: 10
+# disqusShortname
 theme: mainroad
+
+author:
+    name: "Kura Bloodlust"
+    bio: "Kura, also known as Criss, is an enthusiastic developer, specialized in Go and NodeJS applications"
+    avatar: "img/avatar.png"
+
+params:
+    subtitle: "Random thoughts and trashy animes"
+    description: "Kura's blog about anything and everything"
+    opengraph: true
+    readmore: false
+    leftsidebar: false
+    post_navigation: true
+    postSections:
+        - posts
+    dateformat: 2006-01-2
+    authorbox: true
+
+    widgets:
+        search: true
+        recent_articles: true
+        recent_articles_num: 5
+        categories: true
+        tags: true
+        tags_counter: true
+
+        social_twitter: IAmKura
+        social_mastodon: niu.moe/@kura
+        social_github: cking
+        social_email: contact@kurabloodlust.eu
