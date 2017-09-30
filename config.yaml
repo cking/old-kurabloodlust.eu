@@ -10,6 +10,13 @@ author:
     bio: "Kura, also known as Criss, is an enthusiastic developer, specialized in Go and NodeJS applications"
     avatar: "img/avatar.png"
 
+menu:
+    main:
+        - name: "Blog"
+          weight: -666
+          identifier: "posts"
+          url: "/"
+
 params:
     subtitle: "Random thoughts and trashy animes"
     description: "Kura's blog about anything and everything"
