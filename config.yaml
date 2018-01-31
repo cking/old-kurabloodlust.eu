@@ -38,6 +38,7 @@ params:
         tags_counter: true
 
         social_twitter: IAmKura
+        social_keybase: kurabloodlust
         social_mastodon: niu.moe/@kura
         social_github: cking
         social_email: contact@kurabloodlust.eu
