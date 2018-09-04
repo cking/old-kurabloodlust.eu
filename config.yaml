@@ -1,44 +1,66 @@
-baseURL: "/"
-languageCode: "en-us"
-title: "Kura Bloodlust"
+baseURL: '/'
+languageCode: 'en-us'
+title: 'Kura Bloodlust'
 paginate: 10
 # disqusShortname
-theme: mainroad
+theme: dream-plus
+copyright: KopyRite
 
 author:
-    name: "Kura Bloodlust"
-    bio: "Kura, also known as Criss, is an enthusiastic developer, specialized in Go and NodeJS applications"
-    avatar: "img/avatar.png"
+  name: 'Kura Bloodlust'
+  bio: 'Kura, also known as Criss, is an enthusiastic developer, specialized in Go and NodeJS applications'
+  avatar: 'img/avatar.png'
 
 menu:
-    main:
-        - name: "Blog"
-          weight: -666
-          identifier: "posts"
-          url: "/"
+  main:
+    - name: 'Blog'
+      weight: -666
+      identifier: 'posts'
+      url: '/'
+
+social:
+  github: cking
+  gitlab: cking
+  twitter: IAmKura
+  youtube: cking4live
+  keybase: kurabloodlust
+  mastodon: niu.moe/@kura
+  reddit: kurabloodlust
+  email: contact@kurabloodlust.eu
 
 params:
-    subtitle: "Random thoughts and trashy animes"
-    description: "Kura's blog about anything and everything"
-    opengraph: true
-    readmore: false
-    leftsidebar: false
-    post_navigation: true
-    postSections:
-        - posts
-    dateformat: 2006-01-2
-    authorbox: true
+  enableColorBG: true
+  # enable color bg = false:
+  #bgBlur: num
+  #bgList:
+  #  - does this work?
+  customCSS:
+    - css/simpleicons.css
 
-    widgets:
-        search: true
-        recent_articles: true
-        recent_articles_num: 5
-        categories: true
-        tags: true
-        tags_counter: true
+  # user card
+  author: "Ch. König aka Kura Bloodlust"
+  avatar: "/img/avatar.png"
+  motto: >
+    Criss (or Kura) is a developer and so called weeb.
+    He loves to dive into NodeJS and Golang projects
+    and keeps his mind sane with anime and games.
+  #favicon: "path/to/fav.ico"
 
-        social_twitter: IAmKura
-        social_keybase: kurabloodlust
-        social_mastodon: niu.moe/@kura
-        social_github: cking
-        social_email: contact@kurabloodlust.eu
+  # sidebar
+  enableTags: true
+  enableCategories: true
+  siteStartYear: 2017
+
+  # flip
+  copyright:
+    - BY-NC-SA
+    - All content, unless stated otherwise, is written by me and licensed under CC BY-NC-SA 4.0
+  social:
+    github: cking
+
+  # content
+  contentType: post
+  paginate: 4
+  itemsPerPage: 8
+  enableToc: false
+  enableShareCard: true

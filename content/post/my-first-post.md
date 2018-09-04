@@ -2,6 +2,12 @@
 title: "Hello World"
 date: 2017-09-29T11:39:16+02:00
 draft: false
+tags:
+    - introduction
+categories: Personal
+
+description: >
+    My very first post on here!
 
 # thumbnail = "img/placeholder.jpg" # Optional, thumbnail
 # disable_comments = false # Optional, disable Disqus comments if true

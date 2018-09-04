@@ -1,0 +1,58 @@
+{{- with ($.Param "author.name") -}}
+	{{- $.Page.Scratch.Set "authorName" ($.Param "author.name") }}
+{{ else }}
+	{{- $.Page.Scratch.Set "authorName" $.Site.Params.author -}}
+{{ end }}
+{{- if and ($.Site.Params.avatar) (eq ($.Site.Params.author) ($.Page.Scratch.Get "authorName")) -}}
+	{{- $.Page.Scratch.Set "flag" true -}}
+{{ end }}
+{{- with ($.Param "author.avatar") -}}
+	{{- $.Page.Scratch.Set "authorAvatar" ($.Param "author.avatar") -}}
+{{ else }}
+	{{- if $.Page.Scratch.Get "flag" -}}
+		{{- $.Page.Scratch.Set "authorAvatar" ($.Site.Params.avatar) -}}
+	{{ else }}
+		{{- $.Page.Scratch.Set "avatarFlag" true -}}
+		{{- $.Page.Scratch.Set "authorAvatar" (index (shuffle (seq 1 4)) 0 ) -}}
+	{{ end }}
+{{ end }}
+{{- with ($.Param "author.desc") -}}
+	{{- $.Page.Scratch.Set "authorDesc" ($.Param "author.desc") }}
+{{ else }}
+	{{- $.Page.Scratch.Set "authorDesc" $.Site.Params.motto -}}
+{{ end }}
+{{- with ($.Param "author.twitter") -}}
+	{{- $.Page.Scratch.Set "twitter" ($.Param "author.twitter") }}
+{{ else }}
+	{{- if and $.Site.Social.twitter ($.Page.Scratch.Get "flag") -}}
+		{{- $.Page.Scratch.Set "twitter" $.Site.Social.twitter -}}
+	{{ end }}
+{{ end }}
+<div class="author">
+	{{- if $.Page.Scratch.Get "avatarFlag" -}}
+	<img class="avatar" src="/img/avatar{{ $.Page.Scratch.Get `authorAvatar` }}.svg">
+	{{ else }}
+	<img class="avatar" src="{{ $.Page.Scratch.Get `authorAvatar` }}">
+	{{ end }}
+</div>
+<div class="info grow flexbox">
+	{{- with $.Page.Scratch.Get "twitter" -}}
+	<a href="https://twitter.com/{{ $.Page.Scratch.Get `twitter` }}">
+	{{ end }}
+	<p class="name">{{ $.Page.Scratch.Get "authorName" }}</p>
+	{{- with $.Page.Scratch.Get "twitter" -}}
+	</a>
+	{{ end }}
+	<p class="desc">{{ $.Page.Scratch.Get "authorDesc" }}</p>
+</div>
+<section class="buttons row box">
+	<div class="facebook none flexbox" href="#" onclick="window.open(
+			'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+			'facebook-share-dialog',
+			'width=626,height=436'); return false;">
+		<button class="ui facebook button"><i class="facebook icon"></i>Share</button>
+	</div>
+	<div class="twitter none flexbox" onclick="window.open('https://twitter.com/intent/tweet?text=Read &quot;{{ .LinkTitle }} {{ with .Site.Social.twitter }}&quot; by @{{ . }}{{ end }} {{ .Permalink }}','_self')">
+		<button class="ui twitter button"><i class="twitter icon"></i>Tweet</button>
+	</div>
+</section>
